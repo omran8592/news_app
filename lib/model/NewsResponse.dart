@@ -2,11 +2,12 @@ import 'SourceResponse.dart';
 
 class NewsResponse {
   NewsResponse({
-      this.status,
+    this.status,
     this.code,
     this.message,
-      this.totalResults,
-      this.articles,});
+    this.totalResults,
+    this.articles,
+  });
 
   NewsResponse.fromJson(dynamic json) {
     status = json['status'];
@@ -20,11 +21,13 @@ class NewsResponse {
       });
     }
   }
+
   String? status;
   int? totalResults;
   List<News>? articles;
   String? code;
   String? message;
+
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['status'] = status;
@@ -32,21 +35,23 @@ class NewsResponse {
     if (articles != null) {
       map['articles'] = articles?.map((v) => v.toJson()).toList();
     }
+    map['code'] = code;
+    map['message'] = message;
     return map;
   }
-
 }
 
 class News {
   News({
-      this.source,
-      this.author,
-      this.title,
-      this.description,
-      this.url,
-      this.urlToImage,
-      this.publishedAt,
-      this.content,});
+    this.source,
+    this.author,
+    this.title,
+    this.description,
+    this.url,
+    this.urlToImage,
+    this.publishedAt,
+    this.content,
+  });
 
   News.fromJson(dynamic json) {
     source = json['source'] != null ? Sources.fromJson(json['source']) : null;
@@ -58,6 +63,7 @@ class News {
     publishedAt = json['publishedAt'];
     content = json['content'];
   }
+
   Sources? source;
   String? author;
   String? title;
@@ -81,5 +87,4 @@ class News {
     map['content'] = content;
     return map;
   }
-
 }

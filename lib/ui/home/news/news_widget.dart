@@ -3,7 +3,6 @@ import 'package:news_app/api/api_manger.dart';
 import 'package:news_app/model/NewsResponse.dart';
 import 'package:news_app/model/SourceResponse.dart';
 import 'package:news_app/ui/home/news/news_item.dart';
-import 'package:news_app/utils/app_styles.dart';
 import '../../../utils/app_colors.dart';
 
 class NewsWidget extends StatefulWidget {

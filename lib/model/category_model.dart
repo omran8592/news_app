@@ -1,7 +1,11 @@
+
 import '../utils/assets_manager.dart';
+
 class CategoryModel {
   String id;
+
   String title;
+
   String imagePath;
 
   CategoryModel(
